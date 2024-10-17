@@ -1,0 +1,86 @@
+body {
+    background-color: #000000;
+    
+}
+
+
+.supertitulo {
+    color: #efd498;
+    background-color: rgb(0 0 0 / 95%);
+    padding: 1vh;
+}
+
+.bg-image {
+    background-image: url(../img/backgroundsupervampiros.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    background-color: #010101d9;
+    padding: 10px;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-around;
+}
+
+.card {
+    --bs-card-bg: rgba(0, 0, 0, 0.95);
+    color: #f1cb8a;
+    width: 100%;
+    height: 50%;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-terror {
+    --bs-btn-bg: #63050e;
+    --bs-btn-border-color: #7f000c;
+    --bs-btn-color: #efd498;
+
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #9d0000;
+    --bs-btn-hover-border-color: #63050e;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #63050e;
+    --bs-btn-active-border-color: 7f000c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: hsl(0, 100%, 9%);
+    --bs-btn-disabled-border-color: hsl(0, 100%, 9%);
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+.modal-body {
+    background-color: #87000d;
+}
+
+.modal-content {
+    color: #efd498;
+
+    background-color: #87000d;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

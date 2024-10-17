@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supermercado Halloween</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body class="bg-image">
+    <h1 class="text-center mb-4 supertitulo">Supermercado Halloween</h1>
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./assets/img/lechevamp.jpeg" class="card-img-top" alt="Leche" />
+                        <div class="card-body">
+                            <h5 class="card-title">Leche</h5>
+                            <p class="card-text">Precio: $1000</p>
+                            <button class="btn btn-terror agregar-producto" data-producto="1">
+                                Agregar al carro del terror
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./assets/img/pan.jpeg" class="card-img-top" alt="Pan de Molde" />
+                        <div class="card-body">
+                            <h5 class="card-title">Pan de Molde</h5>
+                            <p class="card-text">Precio: $2000</p>
+                            <button class="btn btn-terror agregar-producto" data-producto="2">
+                                Agregar al carro del terror
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./assets/img/queso.jpeg" class="card-img-top" alt="Queso" />
+                        <div class="card-body">
+                            <h5 class="card-title">Queso</h5>
+                            <p class="card-text">Precio: $1200</p>
+                            <button class="btn btn-terror agregar-producto" data-producto="3">
+                                Agregar al carro del terror
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./assets/img/mermelada.jpeg" class="card-img-top" alt="Mermelada" />
+                        <div class="card-body">
+                            <h5 class="card-title">Mermelada</h5>
+                            <p class="card-text">Precio: $890</p>
+                            <button class="btn btn-terror agregar-producto" data-producto="4">
+                                Agregar al carro del terror
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="assets/img/azucar.jpeg" class="card-img-top" alt="Azúcar" />
+                        <div class="card-body">
+                            <h5 class="card-title">Azúcar</h5>
+                            <p class="card-text">Precio: $1300</p>
+                            <button class="btn btn-terror agregar-producto" data-producto="5">
+                                Agregar al carro del terror
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="cantidadModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carro del terror</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Ingresa la cantidad de unidades:</p>
+                        <input type="number" id="cantidad-unidades" class="form-control" min="1" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-terror" id="confirmar-cantidad">
+                            Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmacionModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carro del terror</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="producto-agregado"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-terror" data-bs-dismiss="modal">
+                            Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="continuarModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carro del terror</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Deseas seguir agregando productos? (s/n)</p>
+                        <input type="text" id="seguir-agregando" class="form-control" maxlength="1" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-terror" id="responder-continuar">
+                            Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="totalModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carro del terror</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p id="total-compra"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-terror" data-bs-dismiss="modal">
+                            Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
